@@ -4,7 +4,7 @@ import IconDaw from './icons/IconDaw.vue';
 </script>
 
 <template>
-    <div class="w-full h-200 overflow-y-hidden relative">
+    <div class="w-full h-200 overflow-y-hidden relative" id="transfer">
         <video class="w-full z-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" autoplay loop
             muted>
             <source src="/public/preview.mp4" type="video/mp4">
@@ -35,7 +35,7 @@ import IconDaw from './icons/IconDaw.vue';
                 </div>
                 <div class="flex gap-x-6 rotate-8 px-10 border-y text-xl py-4 mb-10">
                     <IconDaw />
-                    <h2 class=" ">Встречаем в аэропорту Сочи</h2>
+                    <h2 class=" ">Встречаем в аэропорту Сухум</h2>
                 </div>
                 <div class=" w-max overflow-x-hidden rotate-8">
                     <div

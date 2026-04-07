@@ -1,24 +1,50 @@
 <script setup>
+import { onMounted, onUnmounted, ref } from 'vue';
 import ContentContainer from './ContentContainer.vue';
 import IconLogo from './icons/IconLogo.vue';
 import IconTelegramm from './icons/IconTelegramm.vue';
 import IconWhatsapp from './icons/IconWhatsapp.vue';
 
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+    isScrolled.value = window.scrollY > 0
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-    <header
-        class="fixed backdrop-blur-md bg-white/1 border-b border-[#ffde7b3b] top-0 left-1/2  transform -translate-x-1/2 max-w-screen w-full  z-2  text-white py-4 ">
+    <header :class="[
+        'fixed backdrop-blur-md top-0 left-1/2 transform -translate-x-1/2 max-w-screen w-full z-2 text-white py-4 transition-all duration-300',
+        isScrolled ? 'bg-[#1b1b1b] border-b border-[#ffde7b3b]' : 'bg-white/1 border-b border-[#ffde7b3b]'
+    ]">
         <ContentContainer>
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <IconLogo class="w-14 mr-20" />
                     <ul class="flex gap-x-0">
-                        <li class="text-base font-light nav-item">Раздел 1</li>
-                        <li class="text-base font-light nav-item">Раздел 2</li>
-                        <li class="text-base font-light nav-item">Раздел 3</li>
-                        <li class="text-base font-light nav-item">Раздел 4</li>
-                        <li class="text-base font-light nav-item">Раздел 5</li>
+                        <a href="#transfer">
+                            <li class="text-base font-light nav-item">Трансфер</li>
+                        </a>
+                        <a href="#car">
+                            <li class="text-base font-light nav-item">Транспорт</li>
+                        </a>
+                        <a href="#vip-car">
+                            <li class="text-base font-light nav-item">VIP Транспорт</li>
+                        </a>
+                        <a href="#tour">
+                            <li class="text-base font-light nav-item">Туры</li>
+                        </a>
+                        <a href="#accommodation">
+                            <li class="text-base font-light nav-item">Размещение</li>
+                        </a>
                     </ul>
                 </div>
                 <div class="flex gap-x-10 items-center">
