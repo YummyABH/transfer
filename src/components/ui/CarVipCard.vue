@@ -23,21 +23,23 @@ const currentPrice = computed(() => {
 
 <template>
     <div
-        class="group flex max-w-7xl  px-10 max-md:px-5 mx-auto bg-linear-to-br from-[#ffe9a0] to-[#0d0d0d] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,215,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.4),0_0_0_1px_rgba(229,198,103,0.3)]">
-        <div class="relative flex-[0_0_40%] overflow-hidden">
+        class="group max-lg:flex-col max-lg:w-full flex max-w-7xl max-sm:px-5  px-10 max-md:px-5 mx-auto bg-linear-to-br from-[#ffe9a0] to-[#0d0d0d] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,215,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.4),0_0_0_1px_rgba(229,198,103,0.3)]">
+        <div class="lg:flex-row relative flex flex-col overflow-hidden">
             <div class="h-full flex items-center">
                 <img class="w-full  object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
                     :src="`/public/${img}`" :alt="carTitle">
             </div>
             <div
-                class="absolute top-5 left-5 bg-linear-to-br from-[#e5c667] to-[#d4af37] py-1.5 px-3.5 rounded-full shadow-md">
+                class="max-sm:text-xs max-sm:top-3 max-sm:left-1 absolute top-5 left-5 bg-linear-to-br from-[#e5c667] to-[#d4af37] py-1.5 px-3.5 rounded-full shadow-md">
                 <span class="text-xs font-semibold tracking-wide text-[#1a1a1a] uppercase">Премиум класс</span>
             </div>
         </div>
 
-        <div class="flex-1 p-7 md:p-8 flex flex-col">
+        <div class="flex-1 max-sm:p-0 max-sm:pb-5 p-7 md:p-8 flex flex-col">
             <div class="flex justify-between items-start mb-5 flex-wrap gap-3">
-                <h3 class="text-2xl md:text-2xl font-semibold text-white tracking-tight leading-tight m-0">{{ carTitle
+                <h3
+                    class="max-sm:text-xl text-2xl md:text-2xl font-semibold text-white tracking-tight leading-tight m-0">
+                    {{ carTitle
                     }}</h3>
                 <div class="flex items-center gap-2 bg-black/58 py-1.5 px-3.5 rounded-full backdrop-blur-[10px]">
                     <IconPerson class="w-4.5 h-4.5 text-[#e5c667]" />
@@ -45,11 +47,12 @@ const currentPrice = computed(() => {
                 </div>
             </div>
 
-            <p class="text-sm leading-relaxed text-white/70 mb-6 flex-1" v-html="description">
+            <p class="text-sm max-sm:text-xs text-sm:mb-6 leading-relaxed text-white/70 mb-6 flex-1"
+                v-html="description">
 
             </p>
 
-            <div class="mb-7">
+            <div class="mb-7 max-sm:mb-3">
                 <select v-model="selectedTitle"
                     class=" bg-black/5! border! border-[#e5c667]/30! rounded-xl! py-3! px-4! text-sm! text-white! cursor-pointer! transition-all! duration-300! outline-none! hover:bg-white/8! hover:border-[#e5c667]/60! focus:border-[#e5c667]! focus:shadow-[0_0_0_3px_rgba(229,198,103,0.1)]!">
                     <option v-for="item in cars" :key="item.title" :value="item.title" class="bg-[#7e7557]">
@@ -59,8 +62,8 @@ const currentPrice = computed(() => {
             </div>
 
             <div
-                class="flex justify-between gap-5 pt-5 border-t border-white/10 md:flex-row flex-col md:items-center items-stretch">
-                <div class="flex flex-col gap-1">
+                class="flex justify-between  gap-5 pt-5 max-sm:pt-3 border-t border-white/10 md:flex-row flex-col md:items-center items-stretch">
+                <div class="flex flex-col gap-1 max-sm:flex-row max-sm:items-center max-sm:gap-x-4">
                     <span class="text-xs text-white/50 tracking-wide uppercase">Стоимость</span>
                     <div class="flex items-baseline gap-0.5">
                         <span class="text-[28px] font-bold text-[#e5c667] leading-none">{{ currentPrice }}</span>

@@ -22,23 +22,25 @@
 </script>
         
 <template>
-    <div class="w-full max-w-4xl mx-auto p-6 pb-0 ">
-        <!-- Горизонтальный список заголовков -->
-        <div class="flex gap-2 pb-4 mb-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+    <div class="w-full mt-10 max-w-4xl mx-auto px-4 md:px-6 pb-8">
+
+        <!-- Горизонтальный список табов с прокруткой -->
+        <div
+            class="flex gap-2 pb-6 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory -mx-1 px-1">
             <button v-for="(item, index) in tabs" :key="index" @click="activeTab = index"
-                class="px-6 py-3 cursor-pointer text-base font-medium rounded-full transition-all duration-300 whitespace-nowrap"
+                class="flex-shrink-0 px-6 py-3.5 text-sm md:text-base font-medium rounded-2xl transition-all duration-300 whitespace-nowrap snap-start"
                 :class="[
                     activeTab === index
-                        ? 'bg-[#e5c667] text-white shadow-lg shadow-blue-200 scale-105'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800'
+                        ? 'bg-[#e5c667] text-white shadow-lg shadow-[#e5c667]/30 scale-[1.03]'
+                        : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800'
                 ]">
                 {{ item.title }}
             </button>
         </div>
 
-        <!-- Отображаемый текст под списком -->
-        <div class="bg-white rounded-xl shadow-lg p-6 min-h-50 animate-fadeIn">
-            <p class="text-gray-700 leading-relaxed">
+        <!-- Контент таба -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[180px] transition-all duration-300">
+            <p class="text-gray-700 leading-relaxed text-[15px] md:text-base">
                 {{ tabs[activeTab]?.content }}
             </p>
         </div>
@@ -47,10 +49,11 @@
 
 
 <style scoped>
+/* Плавная анимация появления контента */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(12px);
     }
 
     to {
@@ -60,16 +63,16 @@
 }
 
 .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out;
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Стили для скроллбара (опционально) */
+/* Кастомный скроллбар для табов (тонкий и красивый) */
 .scrollbar-thin::-webkit-scrollbar {
-    height: 6px;
+    height: 7px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
     border-radius: 10px;
 }
 
@@ -80,5 +83,11 @@
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
+}
+
+/* Скрываем стрелки прокрутки в Firefox */
+.scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
 }
 </style>
