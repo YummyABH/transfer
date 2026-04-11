@@ -2,6 +2,8 @@
 import ContentContainer from './ContentContainer.vue';
 import TourCard from './ui/TourCard.vue';
 
+const isOpen = defineModel('isOpen')
+
 const tourInfo = [
     {
         price: '15 000',
@@ -50,10 +52,12 @@ const tourInfo = [
                 molestiae est, quibusdam nemo ea ipsum nam deserunt aliquid alias consequatur possimus a, pariatur odio
                 sapiente, voluptate velit doloremque!</div>
             <div class="grid grid-cols-1  lg:grid-cols-2 grid-rows-2 gap-1">
-                <TourCard :list="tourInfo[0]" :title="'Город герой  — Ткуарчал'" :img="'tour1.jpg'" />
-                <TourCard :list="tourInfo[1]" :title="'Новый Афон'" :img="'tour2.jpg'" />
-                <TourCard :list="tourInfo[2]" :title="'Озеро Рица  — жемчужина Кавказа'" :img="'tour3.webp'" />
-                <TourCard :list="tourInfo[3]" :title="'Черниговка'" :img="'tour4.jpg'" />
+                <TourCard v-model:isOpen="isOpen" :list="tourInfo[0]" :title="'Город герой  — Ткуарчал'"
+                    :img="'tour1.jpg'" />
+                <TourCard v-model:isOpen="isOpen" :list="tourInfo[1]" :title="'Новый Афон'" :img="'tour2.jpg'" />
+                <TourCard v-model:isOpen="isOpen" :list="tourInfo[2]" :title="'Озеро Рица  — жемчужина Кавказа'"
+                    :img="'tour3.webp'" />
+                <TourCard v-model:isOpen="isOpen" :list="tourInfo[3]" :title="'Черниговка'" :img="'tour4.jpg'" />
             </div>
             <h3 class="text-2xl my-10 text-center font-semibold">Удобства</h3>
             <div class="mt-10 grid max-sm:grid-cols-1 grid-cols-2 max-lg:grid-cols-1 gap-4 grid-rows-2 ">

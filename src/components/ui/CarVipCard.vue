@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
-import IconPerson from '@/components/icons/IconPerson.vue';
 
+const isOpen = defineModel('isOpen')
 
 const props = defineProps({
     img: String,
@@ -23,11 +23,11 @@ const currentPrice = computed(() => {
 
 <template>
     <div
-        class="group max-lg:flex-col max-lg:w-full flex max-w-7xl max-sm:px-5  px-10 max-md:px-5 mx-auto bg-linear-to-br from-[#ffe9a0] to-[#0d0d0d] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,215,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.4),0_0_0_1px_rgba(229,198,103,0.3)]">
-        <div class="lg:flex-row relative flex flex-col overflow-hidden">
-            <div class="h-full flex items-center">
-                <img class="w-full  object-cover transition-transform duration-600 ease-in-out group-hover:scale-105"
-                    :src="`/public/${img}`" :alt="carTitle">
+        class="group max-lg:flex-col max-lg:w-full flex max-w-7xl max-sm:px-5  px-10 max-md:px-5 mx-auto bg-linear-to-br from-[#ffe9a0] to-[#0d0d0d] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,215,0,0.1)] transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.4),0_0_0_1px_rgba(229,198,103,0.3)]">
+        <div class="lg:flex-row relative items-center flex flex-col overflow-hidden">
+            <div class="aspect-square max-w-125 h-full flex items-center">
+                <img class="w-full  object-cover  transition-transform duration-600 ease-in-out group-hover:scale-105"
+                    :src="`/${img}`" :alt="carTitle">
             </div>
             <div
                 class="max-sm:text-xs max-sm:top-3 max-sm:left-1 absolute top-5 left-5 bg-linear-to-br from-[#e5c667] to-[#d4af37] py-1.5 px-3.5 rounded-full shadow-md">
@@ -41,10 +41,10 @@ const currentPrice = computed(() => {
                     class="max-sm:text-xl text-2xl md:text-2xl font-semibold text-white tracking-tight leading-tight m-0">
                     {{ carTitle
                     }}</h3>
-                <div class="flex items-center gap-2 bg-black/58 py-1.5 px-3.5 rounded-full backdrop-blur-[10px]">
+                <!-- <div class="flex items-center gap-2 bg-black/58 py-1.5 px-3.5 rounded-full backdrop-blur-[10px]">
                     <IconPerson class="w-4.5 h-4.5 text-[#e5c667]" />
                     <span class="text-sm font-medium text-[#e5c667]">{{ passengers }} пассажира</span>
-                </div>
+                </div> -->
             </div>
 
             <p class="text-sm max-sm:text-xs text-sm:mb-6 leading-relaxed text-white/70 mb-6 flex-1"
@@ -71,7 +71,7 @@ const currentPrice = computed(() => {
                     </div>
                 </div>
 
-                <button
+                <button @click="isOpen = !isOpen"
                     class="bg-transparent border-[1.5px] border-[#e5c667]/50 rounded-full py-3 px-7 md:px-7 flex items-center gap-2.5 cursor-pointer transition-all duration-300 text-sm font-medium text-white whitespace-nowrap hover:bg-[#e5c667] hover:border-[#e5c667] hover:text-[#1a1a1a] hover:translate-x-1 justify-center">
                     <span>Заказать трансфер</span>
                     <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"

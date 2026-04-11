@@ -7,6 +7,8 @@ defineProps({
     list: Object
 })
 
+const isOpen = defineModel('isOpen')
+
 </script>
 
 <template>
@@ -31,7 +33,7 @@ defineProps({
                 <div class="py-1 mt-2 px-2 bg-white w-max"><span class="font-medium">Цена:</span> от {{ list.price }}
                     руб.
                 </div>
-                <div
+                <div @click="isOpen = !isOpen"
                     class="mt-2 px-6 py-2 border-2 border-[#e5c667] border-l-0 text-white w-max hover:bg-[#e5c667] duration-200 cursor-pointer">
                     Позвонить</div>
             </ul>

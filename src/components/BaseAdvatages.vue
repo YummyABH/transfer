@@ -7,14 +7,10 @@
                 title: 'Преимущества',
                 content: 'В этом разделе перечислены ключевые преимущества. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             },
-            {
-                title: 'Особенности',
-                content: 'Здесь описаны уникальные особенности и характеристики. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-            },
-            {
-                title: 'Контакты',
-                content: 'Контактная информация для связи с нами. Вы можете связаться по электронной почте или по телефону. Мы всегда рады ответить на ваши вопросы!'
-            }
+            // {
+            //     title: 'Контакты',
+            //     content: 'Контактная информация для связи с нами. Вы можете связаться по электронной почте или по телефону. Мы всегда рады ответить на ваши вопросы!'
+            // }
         ])
 
         // Активная вкладка (по умолчанию 0 - первая)
@@ -28,7 +24,7 @@
         <div
             class="flex gap-2 pb-6 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory -mx-1 px-1">
             <button v-for="(item, index) in tabs" :key="index" @click="activeTab = index"
-                class="flex-shrink-0 px-6 py-3.5 text-sm md:text-base font-medium rounded-2xl transition-all duration-300 whitespace-nowrap snap-start"
+                class="shrink-0 px-6 py-3.5 text-sm md:text-base font-medium rounded-2xl transition-all duration-300 whitespace-nowrap snap-start"
                 :class="[
                     activeTab === index
                         ? 'bg-[#e5c667] text-white shadow-lg shadow-[#e5c667]/30 scale-[1.03]'
@@ -39,7 +35,7 @@
         </div>
 
         <!-- Контент таба -->
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[180px] transition-all duration-300">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-45 transition-all duration-300">
             <p class="text-gray-700 leading-relaxed text-[15px] md:text-base">
                 {{ tabs[activeTab]?.content }}
             </p>

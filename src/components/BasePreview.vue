@@ -1,6 +1,7 @@
 <script setup>
 import IconDaw from './icons/IconDaw.vue';
 
+const isOpen = defineModel('isOpen')
 </script>
 
 <template>
@@ -38,7 +39,7 @@ import IconDaw from './icons/IconDaw.vue';
             <div class="w-max overflow-x-hidden flex justify-self-center mt-6">
                 <div
                     class=" box-border border-3 px-10 py-3  border-white  hover:border-[#ffde7ba4]  hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
-                    <span>
+                    <span @click="isOpen = !isOpen">
                         Оставить заявку
                     </span>
                 </div>
@@ -75,7 +76,7 @@ import IconDaw from './icons/IconDaw.vue';
                     <h2 class=" ">Встречаем в аэропорту Сухум</h2>
                 </div>
                 <div class=" w-max overflow-x-hidden rotate-8">
-                    <div
+                    <div @click="isOpen = !isOpen"
                         class="relative box-border border-3 px-10 py-3 ml-10 border-white  hover:border-[#ffde7ba4]  hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
                         <span>
                             Оставить заявку

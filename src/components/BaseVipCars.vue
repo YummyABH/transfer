@@ -3,6 +3,8 @@ import BaseAdvatages from './BaseAdvatages.vue';
 import ContentContainer from './ContentContainer.vue'
 import CarVipCard from './ui/CarVipCard.vue'
 
+const isOpen = defineModel('isOpen')
+
 const cars = [
     [
         {
@@ -76,9 +78,9 @@ const cars = [
 </script>
 
 <template>
-    <div class="w-full max-lg:py-5 py-20" id="vip-car">
+    <div class="w-full  max-lg:w-auto max-lg:py-5 pt-20 pb-0" id="vip-car">
         <h2
-            class="mb-20 max-md:pl-20 max-lg:mb-12 max-lg:pl-40 pl-104 py-2 pr-18 relative before:-right-1 after:-bottom-1.25 after:absolute after:w-1.5 after:-right-1.5 after:h-3.25 bg-[#e5c667] text-white after:bg-[#e5c667] before:-top-1 box-border before:w-3.25 before:bg-[#e5c667] before:absolute before:h-14 before:-rotate-8 inline-block border-y-5 text-2xl font-semibold border-[#e5c667]">
+            class="mb-20  max-md:pl-20 max-lg:mb-12 max-lg:pl-40 pl-104 py-2 pr-18 relative before:-right-1 after:-bottom-1.25 after:absolute after:w-1.5 after:-right-1.5 after:h-3.25 bg-[#e5c667] text-white after:bg-[#e5c667] before:-top-1 box-border before:w-3.25 before:bg-[#e5c667] before:absolute before:h-14 before:-rotate-8 inline-block border-y-5 text-2xl font-semibold border-[#e5c667]">
             VIP Транспорт
         </h2>
         <ContentContainer>
@@ -94,9 +96,9 @@ const cars = [
                 consectetur sit velit aut hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint natus
                 molestiae est, quibusdam nemo ea ipsum nam deserunt aliquid alias consequatur possimus a, pariatur odio
                 sapiente, voluptate velit doloremque!</div>
-            <div class="grid grid-rows-2 gap-y-10">
-                <CarVipCard :passengers="4" :img="'car1.png'" :cars="cars[0]" />
-                <CarVipCard :passengers="7" :img="'vip_car2.png'" :cars="cars[1]" />
+            <div class="grid  grid-rows-1 gap-y-10">
+                <!-- <CarVipCard v-model:isOpen="isOpen" :passengers="4" :img="'car1.png'" :cars="cars[0]" /> -->
+                <CarVipCard v-model:isOpen="isOpen" :passengers="7" :img="'vip_car2.png'" :cars="cars[1]" />
             </div>
             <!-- <div class="flex justify-self-center gap-x-16">
                 <div class="my-10 gap-x-4 flex items-center">

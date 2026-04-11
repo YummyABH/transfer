@@ -5,6 +5,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import IconCicle from '../icons/IconCicle.vue';
 
+const isOpen = defineModel('isOpen')
+
 defineProps({
     list: Object,
 })
@@ -30,7 +32,7 @@ defineProps({
         </div>
 
         <!-- Контент -->
-        <div class="p-6 flex-1 flex-col justify-between flex">
+        <div class="p-6 max-lg:p-3 max-sm:px-1 flex-1 flex-col justify-between flex">
             <!-- Преимущества -->
             <ul class="space-y-3 mb-6">
                 <li v-for="(item, index) in list.advantages" :key="index" class="flex items-start gap-3 text-gray-700">
@@ -49,8 +51,8 @@ defineProps({
                 </div>
 
                 <!-- Кнопка -->
-                <button
-                    class="w-full bg-[#ddb642] hover:bg-[#e5c667] active:bg-[#baa35e] transition-colors text-white font-semibold py-4 rounded-2xl text-base shadow-sm flex items-center justify-center gap-2">
+                <button @click="isOpen = !isOpen"
+                    class="w-full cursor-pointer bg-[#ddb642] hover:bg-[#e5c667] active:bg-[#baa35e] transition-colors text-white font-semibold py-4 rounded-2xl text-base shadow-sm flex items-center justify-center gap-2">
                     <IconCicle />
                     Позвонить
                 </button>

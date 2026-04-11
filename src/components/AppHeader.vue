@@ -7,6 +7,7 @@ import IconWhatsapp from './icons/IconWhatsapp.vue';
 
 const isScrolled = ref(false)
 const isActive = ref(false)
+const isOpen = defineModel('isOpen')
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 0
@@ -45,7 +46,7 @@ onUnmounted(() => {
 
 <template>
     <ul :class="isActive ? 'left-0' : '-left-full'"
-        class="flex flex-col duration-300 text-center py-20 fixed bottom-0 z-10 bg-white text-black w-full max-md:h-[calc(89vh)] h-[calc(87.5vh)] gap-x-0 lg:hidden">
+        class="flex flex-col duration-300 text-center py-20 fixed bottom-0 z-10 bg-white text-black w-full max-md:h-[calc(92vh)] h-[calc(87.5vh)] gap-x-0 lg:hidden">
         <a href="#transfer" @click="isActive = !isActive">
             <li class="text-lg font-light nav-item">Трансфер</li>
         </a>
@@ -61,7 +62,7 @@ onUnmounted(() => {
         <a href="#accommodation" @click="isActive = !isActive">
             <li class="text-lg font-light nav-item">Размещение</li>
         </a>
-        <div class="flex gap-x-10 mx-auto mt-10 lg:hidden items-center">
+        <div class="flex gap-x-10  mx-auto mt-10 lg:hidden items-center">
             <div class="flex gap-x-4">
                 <div class="bg-[#0084c6] duration-200 cursor-pointer rounded-lg flex p-2 
                             transition-all 
@@ -81,9 +82,10 @@ onUnmounted(() => {
                 </div>
             </div>
             <div
-                class="px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
+                class=" px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
                 Оставить заявку</div>
         </div>
+        <a href="tel:+79409626290" class="mt-4"><span class="inline-block min-w-max">+7 (940) 962-62-90</span></a>
     </ul>
     <header :class="[
         'fixed z-100 backdrop-blur-md top-0 left-1/2 transform -translate-x-1/2 max-w-screen w-full text-white py-4 transition-all duration-300',
@@ -150,7 +152,7 @@ onUnmounted(() => {
                             <IconWhatsapp />
                         </div>
                     </div>
-                    <div
+                    <div @click="isOpen = !isOpen"
                         class="px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
                         Оставить заявку</div>
                 </div>

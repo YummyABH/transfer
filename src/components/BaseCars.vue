@@ -1,6 +1,7 @@
 <script setup>
 import ContentContainer from './ContentContainer.vue'
 import CarCard from './ui/CarCard.vue'
+const isOpen = defineModel('isOpen')
 
 const cars = [
     [
@@ -81,10 +82,11 @@ const cars = [
             Транспорт
         </h2>
         <ContentContainer>
-            <div class="flex flex-col max-md:flex-col max-lg:flex-row gap-10.5">
-                <CarCard :img="'car1.png'" :cars="cars[0]"
+            <div class="flex flex-col max-md:flex-col max-lg:grid max-lg:grid-cols-2 max-sm:flex gap-10.5">
+                <CarCard v-model:isOpen="isOpen" :mark="'седан'" :img="'car_preview.png'" :passengers="4"
+                    :cars="cars[0]"
                     class="relative before:absolute before:top-0 before:left-0 before:h-[calc(100%+20px)] before:w-0.5 before:bg-[#e5c667] after:absolute after:-bottom-5 after:left-0 after:h-0.5 after:w-full after:bg-[#e5c667]" />
-                <CarCard :img="'car2.png'" :cars="cars[1]"
+                <CarCard v-model:isOpen="isOpen" :mark="'минивэн'" :img="'car2.png'" :passengers="7" :cars="cars[1]"
                     class="relative before:absolute before:bottom-0 before:right-0 before:h-[calc(100%+22px)] before:w-0.5 before:bg-[#e5c667]" />
             </div>
         </ContentContainer>
