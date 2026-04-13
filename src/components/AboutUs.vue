@@ -6,13 +6,13 @@ const isOpen = defineModel('isOpen')
     <section class="py-10 px-4 bg-white">
         <div class="max-w-4xl mx-auto">
             <!-- Заголовок -->
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                 О компании
             </h2>
             <div class="w-20 h-1 bg-amber-500 mx-auto mb-10 rounded-full"></div>
 
             <!-- Весь текст одним блоком -->
-            <div class="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+            <div class="space-y-4 text-[15px] text-gray-700 leading-relaxed text-base md:text-lg">
                 <p>
                     <span class="font-semibold text-gray-900">Здравствуйте, друзья!</span><br />
                     Меня зовут Алиас, я основатель компании и уже более
@@ -54,12 +54,9 @@ const isOpen = defineModel('isOpen')
                 </p>
 
                 <!-- Кнопка -->
-                <div class="text-center pt-4">
-                    <button @click="isOpen = !isOpen"
-                        class="w-max px-2 mx-auto cursor-pointer bg-[#ddb642] hover:bg-[#e5c667] active:bg-[#baa35e] transition-colors text-white font-semibold py-4 rounded-2xl text-base shadow-sm flex items-center justify-center gap-2">
-                        Связаться со мной
-                    </button>
-                </div>
+                <div @click="isOpen = true, isActive = false"
+                    class="text-[15px] w-max justify-self-center px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
+                    Оставить заявку</div>
             </div>
         </div>
     </section>

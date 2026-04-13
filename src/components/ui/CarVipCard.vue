@@ -73,7 +73,7 @@ const currentPrice = computed(() => {
 
                 <button @click="isOpen = !isOpen"
                     class="bg-transparent border-[1.5px] border-[#e5c667]/50 rounded-full py-3 px-7 md:px-7 flex items-center gap-2.5 cursor-pointer transition-all duration-300 text-sm font-medium text-white whitespace-nowrap hover:bg-[#e5c667] hover:border-[#e5c667] hover:text-[#1a1a1a] hover:translate-x-1 justify-center">
-                    <span>Заказать трансфер</span>
+                    <span class="text-[15px]">Заказать трансфер</span>
                     <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"

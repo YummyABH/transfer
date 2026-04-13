@@ -62,27 +62,35 @@ onUnmounted(() => {
         <a href="#accommodation" @click="isActive = !isActive">
             <li class="text-lg font-light nav-item">Размещение</li>
         </a>
-        <div class="flex gap-x-10  mx-auto mt-10 lg:hidden items-center">
-            <div class="flex gap-x-4">
-                <div class="bg-[#0084c6] duration-200 cursor-pointer rounded-lg flex p-2 
-                            transition-all 
-                            hover:bg-[#006a9e]
-                            hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
-                            active:scale-95 
-                            active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
-                    <IconTelegramm />
-                </div>
-                <div class="bg-[#01e675] duration-200 cursor-pointer rounded-lg flex p-2 
-                            transition-all 
-                            hover:bg-[#70d850]
-                            hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
-                            active:scale-95 
-                            active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
-                    <IconWhatsapp />
-                </div>
+        <div class="flex gap-x-6  mx-auto mt-10 lg:hidden items-center">
+            <div class="flex gap-x-2">
+                <a href="tg:@gostevoi_dom_delfine989" target="_blank">
+                    <div class="bg-[#0084c6] duration-200 cursor-pointer rounded-lg flex p-2 
+                                transition-all 
+                                hover:bg-[#006a9e]
+                                hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
+                                active:scale-95 
+                                active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
+                        <IconTelegramm />
+                    </div>
+                </a>
+                <a href="https://wa.me/message/5VZS6ZUKG5SSE1" target="_blank">
+                    <div class="bg-[#01e675] duration-200 cursor-pointer rounded-lg flex p-2 
+                                transition-all 
+                                hover:bg-[#70d850]
+                                hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
+                                active:scale-95 
+                                active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
+                        <IconWhatsapp />
+                    </div>
+
+                </a>
+                <a href="https://max.ru/u/f9LHodD0cOJWv4FpXUT5fnw0AlV0XkGw8P7eq1lEXDadg6m1PJNAu9eTCxU" target="_blank">
+                    <img class="w-10 h-10" src="/max.png" alt="">
+                </a>
             </div>
-            <div
-                class=" px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
+            <div @click="isOpen = true, isActive = false"
+                class="text-[15px] px-4 max-sm:px-2 max-sm:py-1.5 py-3 border border-[#ffdf7b] hover:border-[#ffde7ba4] hover:bg-[#ffde7ba4] duration-200 cursor-pointer">
                 Оставить заявку</div>
         </div>
         <a href="tel:+79409626290" class="mt-4"><span class="inline-block min-w-max">+7 (940) 962-62-90</span></a>
@@ -94,7 +102,8 @@ onUnmounted(() => {
         <ContentContainer>
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <IconLogo class="w-14 max-md:w-10 max-xl:mr-10 mr-20" />
+                    <IconLogo class="w-14 max-lg:mr-0 max-md:w-10 max-xl:mr-10 mr-20" />
+
                     <ul class="flex gap-x-0 max-lg:hidden">
                         <a href="#transfer">
                             <li class="text-base font-light nav-item">Трансфер</li>
@@ -112,6 +121,12 @@ onUnmounted(() => {
                             <li class="text-base font-light nav-item">Размещение</li>
                         </a>
                     </ul>
+                </div>
+                <div class="lg:hidden flex justify-self-center w-max">
+                    <h2 class="px-4 py-3  bg-[#e5c667] mb-2 text-center text-white text-xl max-[350px]:text-lg ">Из Сочи
+                        в Абхазию<br> -
+                        с
+                        комфортом</h2>
                 </div>
                 <button @click="isActive = !isActive"
                     class="group relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20 focus:outline-none lg:hidden">
@@ -135,15 +150,16 @@ onUnmounted(() => {
                 </button>
                 <div class="flex gap-x-10 max-lg:hidden items-center">
                     <div class="flex gap-x-4">
-                        <a href="@gostevoi_dom_delfine989" target="_blank"></a>
-                        <div class="bg-[#0084c6] duration-200 cursor-pointer rounded-lg flex p-2 
-                            transition-all 
-                            hover:bg-[#006a9e]
-                            hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
-                            active:scale-95 
-                            active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
-                            <IconTelegramm />
-                        </div>
+                        <a href="tg:@gostevoi_dom_delfine989" target="_blank">
+                            <div class="bg-[#0084c6] duration-200 cursor-pointer rounded-lg flex p-2 
+                                transition-all 
+                                hover:bg-[#006a9e]
+                                hover:shadow-[inset_0_4px_10px_rgba(0,0,0,0.35)]
+                                active:scale-95 
+                                active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
+                                <IconTelegramm />
+                            </div>
+                        </a>
                         <a href="https://wa.me/message/5VZS6ZUKG5SSE1" target="_blank">
                             <div class="bg-[#01e675] duration-200 cursor-pointer rounded-lg flex p-2 
                                 transition-all 
@@ -153,6 +169,10 @@ onUnmounted(() => {
                                 active:shadow-[inset_0_8px_16px_rgba(0,0,0,0.5)]">
                                 <IconWhatsapp />
                             </div>
+                        </a>
+                        <a href="https://max.ru/u/f9LHodD0cOJWv4FpXUT5fnw0AlV0XkGw8P7eq1lEXDadg6m1PJNAu9eTCxU"
+                            target="_blank">
+                            <img class="w-10 h-10" src="/max.png" alt="">
                         </a>
                     </div>
                     <div @click="isOpen = !isOpen"

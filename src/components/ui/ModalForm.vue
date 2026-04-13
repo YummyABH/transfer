@@ -119,7 +119,7 @@ document.addEventListener('keydown', (e) => {
                             <label class="block text-sm font-medium text-gray-700 mb-1.5">
                                 Фамилия, имя и отчество
                             </label>
-                            <input v-model="form.fullName" type="text" placeholder="ФИО" required
+                            <input v-model="form.fullName" type="text" placeholder="КАК К ВАМ ОБРАЩАТЬСЯ ?" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#e5c667] focus:ring-2 focus:ring-[#e5c667]/30 transition-all" />
                         </div>
 
@@ -140,14 +140,14 @@ document.addEventListener('keydown', (e) => {
 
                         <!-- Кнопка отправки -->
                         <button type="submit" :disabled="isSubmitting"
-                            class="w-full py-4 bg-[#e5c667] hover:bg-[#d4b55a] active:bg-[#c9a94f] text-black font-semibold text-lg rounded-2xl transition-all disabled:opacity-70 disabled:cursor-not-allowed mt-4">
+                            class="cursor-pointer text-white w-full py-4 bg-[#e5c667] hover:bg-[#d4b55a] active:bg-[#c9a94f] font-semibold text-lg rounded-2xl transition-all disabled:opacity-70 disabled:cursor-not-allowed mt-4">
                             {{ isSubmitting ? 'Отправляем...' : 'Отправить заявку' }}
                         </button>
                     </form>
 
                     <!-- Крестик для закрытия -->
                     <button @click="closeModal"
-                        class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+                        class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
                         ✕
                     </button>
                 </div>

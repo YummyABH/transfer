@@ -58,7 +58,7 @@ const isOpen = ref(false)
                     Соц. сети
                   </span>
                   <span class=" min-w-max flex gap-4">
-                    <a href="">
+                    <a href="https://wa.me/message/5VZS6ZUKG5SSE1" target="_blank">
                       <div class="bg-[#01e675] w-max duration-200 cursor-pointer rounded-lg flex p-2 
                               transition-all 
                               hover:bg-[#70d850]
@@ -68,7 +68,7 @@ const isOpen = ref(false)
                         <IconWhatsapp />
                       </div>
                     </a>
-                    <a href="">
+                    <a href="tg:@gostevoi_dom_delfine989" target="_blank">
                       <div class="bg-[#0084c6] w-max duration-200 cursor-pointer rounded-lg flex p-2 
                               transition-all 
                               hover:bg-[#006a9e]
@@ -78,7 +78,8 @@ const isOpen = ref(false)
                         <IconTelegramm />
                       </div>
                     </a>
-                    <a href="">
+                    <a href="https://max.ru/u/f9LHodD0cOJWv4FpXUT5fnw0AlV0XkGw8P7eq1lEXDadg6m1PJNAu9eTCxU"
+                      target="_blank">
                       <img class="w-10 h-10" src="/max.png" alt="">
                     </a>
                   </span>
@@ -86,7 +87,7 @@ const isOpen = ref(false)
               </div>
               <div class="text-start ml-10 max-sm:mx-auto flex flex-col gap-4">
                 <h2 class="text-2xl font-semibold mb-2">Лицензия</h2>
-                <a href="/public/sert.png" download class="flex gap-x-2 items-center">
+                <a href="/certificate.png" download class="flex gap-x-2 items-center">
                   <img class="w-10 " src="/icon_sert.png" alt="">
                   <span class="hover:text-[#616161] duration-200 text-base inline-block w-max">
                     Скачать сертификат

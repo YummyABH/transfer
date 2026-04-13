@@ -70,7 +70,7 @@ defineProps({
                     <span class="text-[15px] leading-relaxed">{{ item }}</span>
                 </li>
                 <li v-if="list.adres" class="text-gray-700 font-base">{{ list.adres }}</li>
-                <li v-if="list.subtitle" class="text-gray-700 font-light">{{ list.subtitle }}</li>
+                <li v-if="list.subtitle" class="text-gray-700 italic font-light">{{ list.subtitle }}</li>
             </ul>
             <!-- Цена -->
             <div class="">
@@ -82,7 +82,7 @@ defineProps({
 
                 <!-- Кнопка -->
                 <button @click="isOpen = !isOpen"
-                    class="w-full cursor-pointer bg-[#ddb642] hover:bg-[#e5c667] active:bg-[#baa35e] transition-colors text-white font-semibold py-4 rounded-2xl text-base shadow-sm flex items-center justify-center gap-2">
+                    class="text-[15px] w-full cursor-pointer bg-[#ddb642] hover:bg-[#e5c667] active:bg-[#baa35e] transition-colors text-white font-semibold py-4 rounded-2xl text-base shadow-sm flex items-center justify-center gap-2">
                     <IconCicle />
                     Позвонить
                 </button>
