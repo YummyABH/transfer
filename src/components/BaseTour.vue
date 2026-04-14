@@ -44,9 +44,11 @@ const tourInfo = [
                 <h2 class="font-semibold text-xl block text-center">Откройте для себя настоящую Абхазию —<br> без толп и
                     спешки.</h2><br>
                 <span class="text-[15px] block">Индивидуальные туры — это:</span><br>
-                <span class="text-[15px] ">✨ маршруты только для вас</span><br>
-                <span class="text-[15px] ">✨ скрытые места, о которых не знают туристы</span><br>
-                <span class="text-[15px] ">✨ комфорт и свобода передвижения</span><br><br>
+                <span class="text-[15px] "><span class="font-bold">•</span> маршруты только для вас</span><br>
+                <span class="text-[15px] "><span class="font-bold">•</span> скрытые места, о которых не знают
+                    туристы</span><br>
+                <span class="text-[15px] "><span class="font-bold">•</span> комфорт и свобода
+                    передвижения</span><br><br>
                 <span class="text-[15px]">От Озеро Рица до Гагра, от Новый Афон до горных водопадов — создадим
                     путешествие вашей
                     мечты.</span><br><br>
@@ -60,8 +62,41 @@ const tourInfo = [
                     :img="'tour3.webp'" />
                 <TourCard v-model:isOpen="isOpen" :list="tourInfo[3]" :title="'Черниговка'" :img="'tour4.jpg'" />
             </div>
-            <h2 class="text-2xl my-10 text-center font-semibold">Удобства</h2>
-            <div class="mt-10 grid max-sm:grid-cols-1 grid-cols-2 max-lg:grid-cols-1 gap-4 grid-rows-2 ">
+            <!-- <h2 class="text-2xl my-10 text-center font-semibold">Удобства</h2> -->
+            <div class="bg-white rounded-2xl mt-10 shadow-xl p-6 min-h-45 transition-all duration-300">
+                <p class="text-gray-700 leading-relaxed text-[15px] md:text-base">
+                <h2 class="text-xl font-semibold text-center block">Удобства</h2><br>
+                <span class="font-semibold">
+                    1. Автомобиль
+                    современный,
+                    чистый,
+                    ухоженный.</span>
+                <br>
+                Безопасный
+                транспорт это
+                залог
+                комфортной поездки.<br><br>
+                <span class="font-semibold">
+                    2. Кондиционер
+                    в
+                    машине:
+                    летом свежо, зимой тепло.
+                </span><br><br>
+                <span class="font-semibold">
+                    3. Зарядка гаджетов, бесплатный Wi-Fi
+                </span><br><br>
+                <span class="font-semibold">
+                    4. Детское кресло.
+                </span><br><br>
+                <span class="font-semibold">
+                    5. Пунктуальность.
+                </span>
+                <br>
+                Мы за то, чтобы не торопиться в дороге, а выезжать вовремя. По этому Ваш водитель будет ожидать
+                Вас за 10-15 минут до поездки.<br><br>
+                </p>
+            </div>
+            <!-- <div class="mt-10 grid max-sm:grid-cols-1 grid-cols-2 max-lg:grid-cols-1 gap-4 grid-rows-2 ">
                 <div class="flex min-h-full max-sm:flex-col col-span-1">
                     <div
                         class="w-24 max-sm:w-full max-sm:h-20 max-sm:flex max-sm:justify-center max-sm:rounded-none max-sm:rounded-t-xl p-2 min-w-18 rounded-l-xl bg-[#feebab]">
@@ -122,7 +157,7 @@ const tourInfo = [
                         Вас за 10-15 минут до поездки.
                     </span>
                 </div>
-            </div>
+            </div> -->
         </ContentContainer>
     </div>
 </template>
